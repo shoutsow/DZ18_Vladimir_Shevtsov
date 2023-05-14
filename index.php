@@ -275,7 +275,7 @@
         как слева направо, так и справа налево. Напишите функцию по определению
         палиндрома по переданному параметру.<br><br>';
         function isPal($str) {
-            function mb_strrev($str){
+            function mb_strrev($str) {
                 $rev = '';
                 for ($i = mb_strlen($str); $i >= 0; $i--) {
                     $rev .= mb_substr($str, $i, 1);
