@@ -16,6 +16,16 @@
             font-weight: bold;
             color: darkred;
         }
+        table {
+            border: 1px solid;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin: 0 auto 0 0;
+        }
+        td {
+            border: 1px solid;
+            padding: 3px;
+        }
     </style>
 </head>
 <body>
@@ -199,7 +209,7 @@
 
         echo 'Вызываем функцию с аргументами $arr = "[34, 56, 12, 3, 7, 96, 36, "Вова"]" 
         и i = "0". Получаем: ' . '<br>';
-        function func($arr, $i) {
+        function elemsOfArr($arr, $i) {
             if ($i == count($arr)) {
                 return;
             }
@@ -208,10 +218,10 @@
             } else {
             echo $arr[$i] . '<br>';
             }
-            func($arr, $i + 1);
+            elemsOfArr($arr, $i + 1);
         }
 
-        echo func([34, 56, 12, 3, 7, 96, 36, 'Вова'], 0) . '<br><hr>';
+        echo elemsOfArr([34, 56, 12, 3, 7, 96, 36, 'Вова'], 0) . '<br><hr>';
 
 
         echo '11. Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры.
@@ -246,7 +256,7 @@
             $vel = $dist / $time;
             $vms = $vel / 3.6;
             echo 'Вызываем функцию с аргументами $dist = 300 км. и $time = 4 ч. ' . 'и получаем скорость равную ' .
-            $vel . ' км/ч или ' . $vms . ' м/с.' . '<br><hr>';
+            $vel . ' км/ч или ' . round($vms, 2) . ' м/с.' . '<br><hr>';
         }
         velocity(300, 4);
 
@@ -268,7 +278,7 @@
         }
 
         echo 'Вызываем функцию с аргументами $str1 = "УЛьТрАфиолЕТ" 
-        и $str1 = "туалет". Получаем: ' . strFromStr('УЛьТрАфиолЕТ', 'туалет') . '<br><hr>';
+        и $str2 = "туалет". Получаем: ' . strFromStr('УЛьТрАфиолЕТ', 'туалет') . '<br><hr>';
 
 
         echo '14. Палиндромом называют последовательность символов, которая читается
@@ -297,7 +307,7 @@
     15. Создайте функцию создания таблицы умножения в HTML-документе в
     виде таблицы с использованием соотв. тегов.<br><br>
 
-        <table align="left" border="1" cellpadding="3" cellspacing="0">
+        <table>
 
         <?php
             function multTable() {
@@ -316,7 +326,7 @@
 
     <?php
 
-        echo '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr>';
+        echo '<br><hr>';
 
 
         echo '16. Дана строка с текстом. Напишите функцию определения самого длинного
@@ -361,7 +371,7 @@
         чтобы длина каждой подстроки была не более N символов. Новая подстрока
         не должна начинаться с пробела.<br><br>';
         function textBreak($text, $n) {
-            return wordwrap($text, $n, "<br>", false);
+            return wordwrap($text, $n, "<br>");
         }
 
         echo 'Вызываем функцию с аргументом $text = "18. Напишите функцию, которая разбивает длинную строку тегами 
